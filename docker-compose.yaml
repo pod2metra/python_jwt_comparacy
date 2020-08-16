@@ -1,0 +1,86 @@
+version: "3.8"
+services:
+  python-jose:
+    build:
+      context: ./
+      dockerfile: Dockerfile-python-jose
+    environment:
+      JWT_IMPORT: "jose.jwt"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 50M
+        reservations:
+          cpus: '1'
+          memory: 50M
+  python-jose-cryptography:
+    build:
+      context: ./
+      dockerfile: Dockerfile-python-jose-cryptography
+    environment:
+      JWT_IMPORT: "jose.jwt"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 50M
+        reservations:
+          cpus: '1'
+          memory: 50M
+  python-jose-pycrypto:
+    build:
+      context: ./
+      dockerfile: Dockerfile-python-jose-pycrypto
+    environment:
+      JWT_IMPORT: "jose.jwt"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 50M
+        reservations:
+          cpus: '1'
+          memory: 50M
+  python-jose-pycryptodome:
+    build:
+      context: ./
+      dockerfile: Dockerfile-python-jose-pycryptodome
+    environment:
+      JWT_IMPORT: "jose.jwt"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 50M
+        reservations:
+          cpus: '1'
+          memory: 50M
+  python-authlib:
+    build:
+      context: ./
+      dockerfile: Dockerfile-authlib_jose
+    environment:
+      JWT_IMPORT: "authlib.jose.jwt"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 50M
+        reservations:
+          cpus: '1'
+          memory: 50M
+  pyjwt:
+    build:
+      context: ./
+      dockerfile: Dockerfile-pyjwt
+    environment:
+      JWT_IMPORT: "jwt"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 50M
+        reservations:
+          cpus: '1'
+          memory: 50M

@@ -1,0 +1,9 @@
+FROM python:3
+
+WORKDIR /usr/src/app
+
+RUN pip install --no-cache-dir python-jose[cryptography]
+
+COPY python_jose_test.py test_file.py
+
+CMD [ "python", "./test_file.py" ]
